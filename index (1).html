@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I’m Sorry Sania ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    padding:20px;
+    color:#000;
+}
+
+.container{
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(12px);
+    border-radius:25px;
+    padding:30px 22px;
+    max-width:420px;
+    width:100%;
+    text-align:center;
+}
+
+.heart{
+    font-size:60px;
+    animation: beat 1.2s infinite;
+}
+
+@keyframes beat{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.25);}
+    100%{transform:scale(1);}
+}
+
+h1{
+    font-size:30px;
+    margin:15px 0;
+}
+
+p{
+    font-size:16px;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+button{
+    width:100%;
+    margin-top:12px;
+    padding:14px;
+    border:none;
+    border-radius:50px;
+    background:#fff;
+    color:#ff5f7e;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.whatsapp-btn{
+    display:block;
+    margin-top:12px;
+    padding:14px;
+    border-radius:50px;
+    background:#25D366;
+    color:#fff;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:600;
+}
+
+.typing{
+    margin-top:20px;
+    min-height:26px;
+    font-size:17px;
+    font-style:italic;
+    opacity:0.9;
+}
+
+.typing::after{
+    content:"|";
+    animation: blink 1s infinite;
+}
+
+@keyframes blink{
+    0%,50%{opacity:1;}
+    51%,100%{opacity:0;}
+}
+
+.music-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:100px;
+    padding:8px 12px;
+    border:none;
+    border-radius:50px;
+    background:#fff;
+    color:#ff5f7e;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    z-index:78;
+}
+    .sorry-wrapper{
+    margin-top:25px;
+    overflow:hidden;
+}
+
+.sorry-text{
+    font-size:28px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-align:center;
+    color:#ff2e63;
+    animation: sorryLoop 3s ease-in-out infinite;
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.6),
+        0 0 20px rgba(255,105,180,0.6),
+        0 0 30px rgba(255,105,180,0.8);
+}
+
+/* 🔁 Loop animation */
+@keyframes sorryLoop{
+    0%{
+        opacity:0;
+        transform:scale(0.8);
+    }
+    40%{
+        opacity:1;
+        transform:scale(1.1);
+    }
+    70%{
+        opacity:1;
+        transform:scale(1);
+    }
+    100%{
+        opacity:0;
+        transform:scale(0.8);
+    }
+}
+
+/* 📱 Mobile optimization */
+@media(max-width:480px){
+    .sorry-text{
+        font-size:24px;
+        letter-spacing:1.5px;
+    }
+}
+    .sorry-text{
+    font-size:30px;
+    font-weight:900;
+    letter-spacing:2px;
+    text-align:center;
+    animation: pulse 1.5s infinite;
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.7),
+        0 0 25px rgba(255,105,180,0.8);
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.15);}
+    100%{transform:scale(1);}
+}
+    .memory-section{
+    margin-top:40px;
+    padding:25px 18px;
+    border-radius:20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    text-align:center;
+}
+
+.memory-line{
+    opacity:0;
+    font-size:17px;
+    margin:10px 0;
+    animation: fadeUp 1s ease forwards;
+}
+
+.memory-line:nth-child(1){ animation-delay:1.5s; }
+.memory-line:nth-child(2){ animation-delay:3.0s; }
+.memory-line:nth-child(3){ animation-delay:4.5s; }
+.memory-line:nth-child(4){ animation-delay:6.0s; }
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(15px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.promise-box{
+    margin-top:25px;
+    padding:18px;
+    border-radius:15px;
+    background: rgba(255,255,255,0.2);
+    font-size:16px;
+    line-height:1.6;
+    box-shadow:0 0 20px rgba(255,182,193,0.4);
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Background Music -->
+<audio id="bgMusic" loop>
+  <source src="https://cdn.pixabay.com/audio/2021/10/25/audio_7c1e8e5c1d.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
+
+<div class="container">
+    <div class="heart">❤️</div>
+
+    <h1>I’m Truly Sorry, Sannu 🥹</h1>
+
+    <p>
+        Dear Sania Perwaiz,<br><br>
+        Mujhse bahut badi galti ho gayi hai.  
+        Maine tumhe hurt kiya, aur iska dard  
+        har pal mujhe mehsoos hota hai.
+    </p>
+
+    <p>
+        Tum meri zindagi ka wo hissa ho  
+        jiske bina sab kuch adhoora lagta hai.
+    </p>
+
+    <button>Please forgive me 🥺</button>
+
+    
+    <!-- ✅ Typing Effect -->
+    <div class="typing" id="typingText"></div>
+    <div class="sorry-wrapper">
+    <div class="sorry-text">I’M SO SORRY BABY</div>
+</div>
+    
+<div class="sorry-wrapper">
+    <div class="sorry-text" id="sorryText"></div>
+</div>
+<!-- Typing effect -->
+<div class="typing" id="typingText"></div>
+
+    <div class="memory-section">
+    <p class="memory-line">If I could go back…</p>
+    <p class="memory-line">I would listen more.</p>
+    <p class="memory-line">I would choose my words carefully.</p>
+    <p class="memory-line">I would never hurt the one I love.</p>
+
+    <div class="promise-box">
+        <span>My only promise now —</span><br>
+        <strong>to love you better, every single day.</strong>
+    </div>
+    </div>
+
+    <a class="whatsapp-btn"
+       href="https://wa.me/916203853427?text=Sannu%2C%20sorry%20na%20baby%20plss%20%E2%9D%A4%EF%B8%8F">
+       💬 Message Me on WhatsApp
+    </a>
+    
+</div>
+
+<script>
+/* 🔁 TYPING LOOP (100% WORKING) */
+const text = "I’m waiting for your reply… 💔";
+let index = 0;
+let deleting = false;
+
+function typingLoop(){
+    const el = document.getElementById("typingText");
+
+    if(!deleting && index < text.length){
+        el.textContent += text.charAt(index);
+        index++;
+    }
+    else if(deleting && index > 0){
+        el.textContent = text.substring(0, index - 1);
+        index--;
+    }
+    else{
+        deleting = !deleting;
+    }
+
+    setTimeout(typingLoop, deleting ? 80 : 120);
+}
+
+setTimeout(typingLoop, 1500);
+
+/* 🎵 MUSIC CONTROL */
+const music = document.getElementById("bgMusic");
+let playing = false;
+
+function toggleMusic(){
+    if(!playing){
+        music.play();
+        playing = true;
+        document.querySelector(".music-btn").innerText = "🔇 Mute Music";
+    }else{
+        music.pause();
+        playing = false;
+        document.querySelector(".music-btn").innerText = "🎵 Play Music";
+    }
+}
+
+    
+const sorryTexts = [
+  "PLEASE FORGIVE ME 😔",
+  "I CAN’T LOSE YOU ❤️",
+  "YOU MEAN EVERYTHING TO ME 🫶",
+    " PLEASE SANNU 🥹 ",
+    " MERI PYARI BACHHI 🥹",
+    "I NEED YOU BABY ♥️"
+];
+
+let textIndex = 0;
+const sorryEl = document.getElementById("sorryText");
+
+function changeSorryText(){
+    sorryEl.style.opacity = 0;
+    setTimeout(()=>{
+        sorryEl.innerText = sorryTexts[textIndex];
+        sorryEl.style.opacity = 1;
+        textIndex = (textIndex + 1) % sorryTexts.length;
+    },1000);
+}
+
+setInterval(changeSorryText, 3000);
+changeSorryText();
+</script>
+
+</body>
+</html>
