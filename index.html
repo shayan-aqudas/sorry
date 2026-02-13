@@ -265,6 +265,53 @@ button{
 .closing p{
     margin:6px 0;
 }
+    .emotion-card{
+  margin:45px auto;
+  padding:30px 22px;
+  max-width:320px;
+  border-radius:25px;
+  background:rgba(255,255,255,0.18);
+  backdrop-filter:blur(8px);
+  text-align:center;
+  color:#fff;
+  box-shadow:0 0 35px rgba(255,105,135,0.35);
+  animation:cardFade 1.5s ease;
+}
+
+.emotion-card p{
+  margin:12px 0;
+  font-size:15px;
+  line-height:1.6;
+}
+
+.line1{
+  font-size:18px;
+  font-weight:600;
+}
+
+.line4{
+  margin-top:18px;
+  font-size:16px;
+  font-weight:500;
+}
+
+.signature{
+  display:block;
+  margin-top:20px;
+  font-size:13px;
+  opacity:0.7;
+}
+
+@keyframes cardFade{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 </style>
 </head>
 
@@ -287,7 +334,27 @@ button{
         Mujhe pata hai tum gussa ho mujhse bahut jyada... shayd mera text dekhne ka bhi mann nii kr rha hoga.. I know mujhse glti hua hai...
         mujhe aisa nahi bolna tha...Mera koi bhi waisa intention nii tha.. per baby mujhe bhi bahut heart hua tha...mujhe nii pata tha aap mazak
         kr rhi ho...aap ek baar khud mere perspective se text pdho... Plss Sannu Chhor do na narajgi... I'm Truly Sorry babe 🥺</p>
+<div class="emotion-card">
+  <p class="line1">I know I hurt you…</p>
+  <p class="line2">
+    And I wish I could take back every word,<br>
+    every moment that made you feel less loved.
+  </p>
 
+  <p class="line3">
+    You didn’t deserve pain,<br>
+    you deserved patience.
+  </p>
+
+  <p class="line4">
+    I’m learning.<br>
+    I’m trying.<br>
+    And I’m truly sorry.
+  </p>
+
+  <span class="signature">— Always yours</span>
+</div>
+    
    <div class="realisation">
     <h3>What I realised…</h3>
     <ul>
