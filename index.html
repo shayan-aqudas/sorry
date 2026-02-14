@@ -520,6 +520,22 @@ button{
         mujhe aisa nahi bolna tha...Mera koi bhi waisa intention nii tha.. per baby mujhe bhi bahut <span onclick="alert('SORRY 🥹')">heart</span> hua tha...mujhe nii pata tha aap mazak
         kr rhi ho...aap ek baar khud mere perspective se text pdho... Plss Sannu Chhor do na narajgi... I'm Truly Sorry babe 🥺.</p>
    <!--CARD START -->
+    <section class="heartbeat-section">
+  <canvas id="particles"></canvas>
+
+  <div class="heartbeat-card">
+    <div class="heart" id="heart">❤️</div>
+
+    <button class="heartbeat-btn" onclick="startHeartbeat()">
+      Tap to feel my heartbeat
+    </button>
+
+    <p class="heartbeat-text" id="heartbeatText">
+      Every beat whispers… I’m truly sorry 💔
+    </p>
+  </div>
+    </section>
+    
 <section class="why-you-matter">
   <div class="emotion-card">
     <p class="line">You matter to me… more than I ever said.</p>
@@ -699,6 +715,55 @@ button{
 </div>
 
 <script>
+    let beating = false;
+
+function startHeartbeat() {
+  const heart = document.getElementById("heart");
+  const text = document.getElementById("heartbeatText");
+
+  if (!beating) {
+    heart.classList.add("beat");
+    text.style.opacity = 1;
+    beating = true;
+  }
+}
+
+/* ❤️ Floating particles */
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+
+const particles = [];
+for (let i = 0; i < 50; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 2 + 1,
+    dy: Math.random() * 0.6 + 0.2,
+    alpha: Math.random()
+  });
+}
+
+function animateParticles() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+    ctx.fillStyle = `rgba(255,180,200,${p.alpha})`;
+    ctx.fill();
+    p.y -= p.dy;
+    if (p.y < 0) p.y = canvas.height;
+  });
+  requestAnimationFrame(animateParticles);
+}
+
+animateParticles();
+
+window.addEventListener("resize", ()=>{
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+});
 /* 🔁 TYPING LOOP (100% WORKING) */
 const text = "I’m waiting for your reply… 💔";
 let index = 0;
@@ -858,6 +923,69 @@ lines.forEach((line, index) => {
 @keyframes pulse {
   0%,100% { text-shadow: 0 0 10px rgba(158,240,255,.4); }
   50% { text-shadow: 0 0 28px rgba(158,240,255,1); }
+}
+        .heartbeat-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #140f2d, #05010a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.heartbeat-card {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 45px;
+  width: 90%;
+  max-width: 420px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+}
+
+.heart {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  transition: transform .3s;
+}
+
+.heartbeat-btn {
+  background: linear-gradient(135deg,#ff5f8f,#ff8fb3);
+  border: none;
+  padding: 14px 26px;
+  border-radius: 999px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(255,95,143,.6);
+}
+
+.heartbeat-text {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #ffd9e5;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.heart.beat {
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  0%,100% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  40% { transform: scale(1); }
+  60% { transform: scale(1.25); }
 }
     </style>
 </html>
