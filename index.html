@@ -520,6 +520,15 @@ button{
         mujhe aisa nahi bolna tha...Mera koi bhi waisa intention nii tha.. per baby mujhe bhi bahut <span onclick="alert('SORRY 🥹')">heart</span> hua tha...mujhe nii pata tha aap mazak
         kr rhi ho...aap ek baar khud mere perspective se text pdho... Plss Sannu Chhor do na narajgi... I'm Truly Sorry babe 🥺.</p>
    <!--CARD START -->
+<section class="why-you-matter">
+  <div class="emotion-card">
+    <p class="line">You matter to me… more than I ever said.</p>
+    <p class="line">Your presence brings peace to my chaos.</p>
+    <p class="line">You value me in ways I never imagined.</p>
+    <p class="line final">You are, and always will be, precious to me 💙</p>
+  </div>
+</section>
+    
 <div class="value-card">
   <p class="reveal">I need to say this clearly…</p>
 
@@ -781,6 +790,52 @@ lines.forEach((line, index) => {
 
 </body>
     <style>
+        .why-you-matter {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1b1c3a, #090a14);
+}
+
+.emotion-card {
+  max-width: 720px;
+  width: 90%;
+  padding: 40px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+.line {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: reveal 1s ease forwards;
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+  color: #e6e4ff;
+}
+
+.line:nth-child(1){animation-delay:.5s}
+.line:nth-child(2){animation-delay:1.4s}
+.line:nth-child(3){animation-delay:2.3s}
+.line:nth-child(4){animation-delay:3.2s}
+
+.final {
+  animation-delay:4.2s;
+  font-size: 1.35rem;
+  color: #9ef0ff;
+  text-shadow: 0 0 15px rgba(158,240,255,0.8);
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @media (prefers-color-scheme: dark){
   body{
     background:linear-gradient(180deg,#0b0b14,#1a1a2e);
@@ -796,6 +851,13 @@ lines.forEach((line, index) => {
     color:#ff9ecf;
   }
 }
-        
+        .final {
+  animation: reveal 1s ease forwards, pulse 1.8s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%,100% { text-shadow: 0 0 10px rgba(158,240,255,.4); }
+  50% { text-shadow: 0 0 28px rgba(158,240,255,1); }
+}
     </style>
 </html>
