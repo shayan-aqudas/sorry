@@ -364,6 +364,76 @@ button{
     transform:translateY(0);
   }
 }
+    .happy-card{
+  margin:55px auto;
+  padding:40px 26px;
+  max-width:340px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#fff1c1,#ffd6e0);
+  text-align:center;
+  color:#5a2a3c;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 25px 60px rgba(255,182,193,0.45);
+  animation:floatUp 1.6s ease;
+}
+
+.sun-circle{
+  position:absolute;
+  top:-40px;
+  right:-40px;
+  width:120px;
+  height:120px;
+  background:radial-gradient(circle,#fff6a9,#ffd56b);
+  border-radius:50%;
+  opacity:0.7;
+}
+
+.happy-card h2{
+  font-size:22px;
+  margin-bottom:14px;
+  font-weight:600;
+}
+
+.happy-card p{
+  font-size:15px;
+  line-height:1.7;
+  margin:12px 0;
+}
+
+.highlight{
+  margin-top:18px;
+  font-style:italic;
+}
+
+.big-line{
+  font-size:20px;
+  font-weight:700;
+  margin:14px 0;
+}
+
+.ending{
+  margin-top:18px;
+  font-size:15px;
+}
+
+.signature{
+  display:block;
+  margin-top:22px;
+  font-size:13px;
+  opacity:0.7;
+}
+
+@keyframes floatUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 </style>
 </head>
 
@@ -387,6 +457,38 @@ button{
         mujhe aisa nahi bolna tha...Mera koi bhi waisa intention nii tha.. per baby mujhe bhi bahut <span onclick="alert('SORRY 🥹')">heart</span> hua tha...mujhe nii pata tha aap mazak
         kr rhi ho...aap ek baar khud mere perspective se text pdho... Plss Sannu Chhor do na narajgi... I'm Truly Sorry babe 🥺.</p>
    <!--CARD START -->
+<div class="happy-card">
+  <div class="sun-circle"></div>
+
+  <h2>It feels lighter now…</h2>
+
+  <p>
+    Maybe not everything is perfect yet,<br>
+    but something beautiful has started.
+  </p>
+
+  <p>
+    I can feel it —<br>
+    the softness in your smile,<br>
+    the calm in your silence.
+  </p>
+
+  <p class="highlight">
+    And that tells me one thing…
+  </p>
+
+  <p class="big-line">
+    We’re healing. 🌱
+  </p>
+
+  <p class="ending">
+    Whatever this becomes,<br>
+    I’m grateful — truly.
+  </p>
+
+  <span class="signature">— With a full heart</span>
+</div>
+    
     <div class="hope-card">
   <p class="h-line1">
     When we meet again — inshallah —
