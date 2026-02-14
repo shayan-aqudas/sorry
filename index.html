@@ -497,11 +497,93 @@ button{
     box-shadow:0 30px 70px rgba(180,160,255,0.35);
   }
 }
+    .love-timer-section {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1a1238, #06010f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.love-timer-card {
+  width: 92%;
+  max-width: 520px;
+  padding: 40px 25px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 25px 70px rgba(0,0,0,.7);
+  text-align: center;
+}
+
+.love-timer-card h2 {
+  color: #ffb3d9;
+  margin-bottom: 6px;
+}
+
+.since {
+  color: #cfc8ff;
+  font-size: .95rem;
+  margin-bottom: 25px;
+}
+
+.timer {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 10px;
+}
+
+.timer div {
+  background: rgba(255,255,255,0.12);
+  border-radius: 18px;
+  padding: 14px 6px;
+}
+
+.timer span {
+  display: block;
+  font-size: 1.6rem;
+  color: #9ef0ff;
+  text-shadow: 0 0 12px rgba(158,240,255,.9);
+}
+
+.timer small {
+  font-size: .75rem;
+  color: #eee;
+}
+
+.timer-text {
+  margin-top: 22px;
+  font-size: 1.05rem;
+  color: #ffd6e8;
+  animation: softPulse 2.5s infinite;
+}
+
+@keyframes softPulse {
+  0%,100% { opacity: .7; }
+  50% { opacity: 1; }
+}
 </style>
 </head>
 
 <body>
+<section class="love-timer-section">
+  <div class="love-timer-card">
+    <h2>Our Love Journey ❤️</h2>
+    <p class="since">Since 9 October 2025</p>
 
+    <div class="timer">
+      <div><span id="months">0</span><small>Months</small></div>
+      <div><span id="days">0</span><small>Days</small></div>
+      <div><span id="hours">0</span><small>Hours</small></div>
+      <div><span id="minutes">0</span><small>Minutes</small></div>
+      <div><span id="seconds">0</span><small>Seconds</small></div>
+    </div>
+
+    <p class="timer-text">
+      And still counting… because my feelings never stopped.
+    </p>
+  </div>
+</section>
 <!-- 🎵 Background Music -->
 <audio id="bgMusic" loop>
   <source src="https://shayan-aqudas.github.io/music/lose-you-sad-piano.mp3" type="audio/mpeg">
@@ -851,6 +933,29 @@ lines.forEach((line, index) => {
 
   }, index * 900);
 });
+    const startDate = new Date("2025-10-09T00:00:00");
+
+function updateLoveTimer() {
+  const now = new Date();
+  let diff = now - startDate;
+
+  const seconds = Math.floor(diff / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+
+  const months = Math.floor(days / 30); // emotional approx
+  const remDays = days % 30;
+
+  document.getElementById("months").textContent = months;
+  document.getElementById("days").textContent = remDays;
+  document.getElementById("hours").textContent = hours % 24;
+  document.getElementById("minutes").textContent = minutes % 60;
+  document.getElementById("seconds").textContent = seconds % 60;
+}
+
+setInterval(updateLoveTimer, 1000);
+updateLoveTimer();
 </script>
 
 </body>
