@@ -503,11 +503,40 @@ button{
   0%,100% { opacity: .7; }
   50% { opacity: 1; }
 }
+/*CSS*/
+    .fixed-love-btn {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+
+  background: linear-gradient(135deg, #ff5fa2, #ff8fc7);
+  color: white;
+  text-decoration: none;
+
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 500;
+
+  box-shadow: 0 12px 35px rgba(255,95,162,0.6);
+  animation: floatBtn 2.5s ease-in-out infinite;
+}
+
+@keyframes floatBtn {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-6px); }
+}
 </style>
 </head>
 
 <body>
-
+<a href="PASTE_YOUR_LINK_HERE"
+   target="_blank"
+   class="fixed-love-btn">
+   Continue to Next Page 💌
+</a>
 <!-- 🎵 Background Music -->
 <audio id="bgMusic" loop>
   <source src="https://shayan-aqudas.github.io/music/lose-you-sad-piano.mp3" type="audio/mpeg">
